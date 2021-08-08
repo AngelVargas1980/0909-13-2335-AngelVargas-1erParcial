@@ -31,6 +31,32 @@ public class CalculadoraAvanzada {
     }
 
     public void potencias() {
+
+        float base;
+        int n;
+        int seguir = 0;
+
+        do {
+            System.out.println("Ingrese la base: ");
+            base = ScannerText.datosFloat();
+
+            System.out.println("Ingrese el exponente");
+            n = ScannerText.datosInt();
+
+            //usamos las librerias MATH con el metodo pow para sacar la potencia, donde primero de coloca la base y luego el exponente.
+            double resultado = Math.pow(base, n);
+
+            System.out.println(base + " elevado a la " + n + " es igual a " + resultado);
+            System.out.println("\n¿Desea volver a calcular otra Potencia?");
+            System.out.println("1) Sí.");
+            System.out.println("2) No, salir.");
+            seguir = ScannerText.datosInt();
+
+            //Si elije si, incializamos en 0 las variables.
+            base = 0;
+            n = 0;
+        } while (seguir != 2);
+
     }
 
     public void anguloSCT() {
