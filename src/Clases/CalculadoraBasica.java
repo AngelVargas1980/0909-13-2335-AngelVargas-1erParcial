@@ -42,6 +42,41 @@ public class CalculadoraBasica {
 
 
     public void restar() {
+        //Variables
+        //cant = numero de veces a ingresar nuemeros.
+        //Num= guarda los numero a calcular
+        //resta = hace la resta total de num's.
+        //seguir = para no salir al menu y seguir restando.
+        float num=0, cant = 0, resta = 0, vali = 0; //vali es una variable de validacion.
+        int seguir = 0;
+
+        do {
+            System.out.println("Escriba cuantos numeros desea restar: ");
+            cant = ScannerText.datosInt();
+
+            for (int i = 0; i < cant; i++){
+                System.out.println("Ingrese el numero a restar: ");
+                num = ScannerText.datosFloat();
+                //si vali se encuentra en 0 el primer numero ingresado se guarda directamente
+                //sin calcular nada
+                if (vali == 0){
+                    resta = num;
+                    vali++; //Incrementamos vali para que el segundo numero en adelante si los reste.
+                }else {
+                    //si vamos por el segundo numero ingresado entonces si restamos.
+                    resta = resta - num;
+                }
+            }
+            System.out.println("El total de la resta es: " + resta);
+            System.out.println("\n¿Desea volver a restar?");
+            System.out.println("1) Sí.");
+            System.out.println("2) No, salir.");
+            seguir = ScannerText.datosInt();
+
+            //en el caso que elija volver a restar, inicializamso las variables en 0 nuevamente.
+            resta = 0;
+            vali = 0;
+        }while (seguir != 2);
     }
 
     public void multi() {
