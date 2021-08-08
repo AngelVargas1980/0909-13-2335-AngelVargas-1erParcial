@@ -80,6 +80,32 @@ public class CalculadoraBasica {
     }
 
     public void multi() {
+
+        float num=0, cont = 0, multi = 0, vali = 0;
+        int seguir = 0;
+
+        do {
+            System.out.println("Escriba cuantos numeros desea Multiplicar: ");
+            cont = ScannerText.datosInt();
+
+            for (int i = 0; i < cont; i++){
+                System.out.println("Ingrese el numero a Multiplicar: ");
+                num = ScannerText.datosFloat();
+                if (vali == 0){
+                    multi = num;
+                    vali++;
+                }else {
+                    multi = multi * num;
+                }
+            }
+            System.out.println("El total de la Multiplicacion es: " + multi);
+            System.out.println("\n¿Desea volver a Multiplicar?");
+            System.out.println("1) Sí.");
+            System.out.println("2) No, salir.");
+            seguir = ScannerText.datosInt();
+            multi = 0;
+            vali = 0;
+        }while (seguir != 2);
     }
 
     public void div() {
