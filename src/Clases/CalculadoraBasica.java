@@ -108,6 +108,52 @@ public class CalculadoraBasica {
         }while (seguir != 2);
     }
 
+
     public void div() {
-    }
+
+
+            float num=0, divi = 0, vali = 0;
+            int seguir = 0,cont = 0;
+            boolean var = false; //validamos si mostrar la divicion o si es indefinido
+
+            do {
+                System.out.println("Escriba cuantos numeros desea Dividir: ");
+                cont = ScannerText.datosInt();
+
+                for (int i = 0; i < cont; i++){
+                    System.out.println("Ingrese el numero a Dividir: ");
+                    num = ScannerText.datosFloat();
+
+                    if (vali == 0){
+                        divi = num;
+                        vali++;
+                    }else {
+                        //si el numero ingresado >=2 es un 0 siempre sera indefinido
+                        if (vali > 0 && num == 0){
+                            i = cont;
+                            System.out.println("INDEFINIDO");
+
+                            //si no se ingresa un 0 despues del primer dato ingresado entonces
+                            //si hacemos la divicion.
+                        }else if (vali > 0 && num !=0){
+                            divi = divi / num;
+                            var = true;
+                        }
+                    }
+                }
+
+                //Si no es indefinido y se puede hacer la divicion, mostramos el resultado.
+                if (var == true){
+                    System.out.println("El total de la Dividicion es: " + divi);
+                }
+                System.out.println("\n¿Desea volver a Dividir?");
+                System.out.println("1) Sí.");
+                System.out.println("2) No, salir.");
+                seguir = ScannerText.datosInt();
+                divi = 0;
+                vali = 0;
+                var = false;
+            }while (seguir != 2);
+        }
+
 }
