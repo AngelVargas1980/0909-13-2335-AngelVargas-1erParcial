@@ -60,5 +60,33 @@ public class CalculadoraAvanzada {
     }
 
     public void anguloSCT() {
+        float num;
+        int seguir = 0;
+        do {
+            try {
+                System.out.print("Introduce un ángulo de (0...360°): ");
+                num = ScannerText.datosFloat();
+                anguloCal(num);
+            } catch (Exception e) {
+                System.out.println("ERROR: Datos incorrectos.");
+            }
+
+            System.out.println("\n¿Desea volver a calcular otra vez?");
+            System.out.println("1) Sí.");
+            System.out.println("2) No, salir.");
+            seguir = ScannerText.datosInt();
+
+            //Si elije si, incializamos en 0 las variables.
+            num = 0;
+        } while (seguir != 2);
     }
+
+    static void anguloCal(double num) {
+        //Primer punto, pasar "num" a radianes.
+        double b = Math.toRadians(num);
+        System.out.println("Seno de " + num + " es: " + Math.sin(b));
+        System.out.println("Coseno de " + num + " es: " + Math.cos(b));
+        System.out.println("Tangente de " + num + " es: " + Math.tan(b));
+    }
+
 }
