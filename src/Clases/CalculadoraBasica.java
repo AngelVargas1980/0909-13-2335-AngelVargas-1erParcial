@@ -132,6 +132,7 @@ public class CalculadoraBasica {
                         if (vali > 0 && num == 0){
                             i = cont;
                             System.out.println("INDEFINIDO");
+                            var = false;
 
                             //si no se ingresa un 0 despues del primer dato ingresado entonces
                             //si hacemos la divicion.
