@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ScannerText {
+
     //Utilizaremos esta clase que remplaza a escanere y manejamos los Errores.
 
     //Cadenas de entradas String
@@ -29,7 +30,6 @@ public class ScannerText {
         }
     }
 
-
     public static float datosFloat(){
         try{
             Float f = new Float(dato());
@@ -38,4 +38,5 @@ public class ScannerText {
             return (Float.NaN);
         }
     }
+
 }

@@ -1,10 +1,15 @@
 package Main;
 
+import Clases.CalculadoraBasica;
+import Clases.ScannerText;
+
 import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        //Creamos nuestro objeto de Calculadora basica.
+        CalculadoraBasica calculadora = new CalculadoraBasica();
 
         //Vamos a crear un menu donde se le muestre al usuario las opciones de calculadora basica y la avanzada.
 
@@ -51,7 +56,7 @@ public class Main {
                                 calculadora.div();
                                 break;
                             case 5:
-                                System.out.println("Saliendo al menu anteriror.");
+                                System.out.println("Saliendo al menu anterior.");
                                 break;
                         }
                     }while (opc1 != 5);
