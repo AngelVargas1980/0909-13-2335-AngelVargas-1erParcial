@@ -1,5 +1,6 @@
 package Main;
 
+import Clases.CalculadoraAvanzada;
 import Clases.CalculadoraBasica;
 import Clases.ScannerText;
 
@@ -10,6 +11,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         //Creamos nuestro objeto de Calculadora basica.
         CalculadoraBasica calculadora = new CalculadoraBasica();
+        CalculadoraAvanzada calculadoraA = new CalculadoraAvanzada();
 
         //Vamos a crear un menu donde se le muestre al usuario las opciones de calculadora basica y la avanzada.
 
